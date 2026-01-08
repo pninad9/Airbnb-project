@@ -7,8 +7,8 @@ The Gold layer includes a metadata-driven One Big Table (OBT), followed by a Sta
 
 **Tech Stack:** AWS S3, Snowflake, dbt (incremental models, macros, lineage, snapshots)
 
-- ` (high-level pipeline overview)
-<img src="`Architecture.png" />
+- High-level pipeline overview
+<img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/Architecture.png" />
 ---
 
 ## 2) Raw Landing (AWS S3) → Snowflake Warehouse (Ingestion Flow)
@@ -32,8 +32,8 @@ Raw source data is provided as CSV files and placed into an AWS S3 bucket path. 
      - `LISTINGS`
      - `BOOKINGS`
 
--  (shows FILE FORMAT + STAGE + COPY INTO)
-<img src="`Snowflake reasources.png`" />
+-  shows FILE FORMAT + STAGE + COPY INTO
+<img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/Snowflake%20reasources.png" />
 
 ---
 
@@ -49,8 +49,8 @@ dbt also provides:
 - Macros for reusable logic
 - Snapshots for SCD2 history tracking
 
-- (sources → bronze → silver → obt)
- <img src="lineage 1.png" />
+- sources → bronze → silver → obt
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/lineage%201.png" />
 ---
 
 ## 4) Bronze Layer (Raw + Incremental)
@@ -62,7 +62,7 @@ Models are built as **incremental**, filtering new records using `CREATED_AT` to
 - `bronze_listings`
 - `bronze_bookings`
 
- <img src="bronze_listings incremental model.png" />
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/bronze_listings%20incremental%20mode.png" />
 
 ---
 
@@ -77,8 +77,8 @@ Example transformations:
 - Host response rate quality bucket (Very Good / Good / Fair / Poor)
 
 
-- (incremental + macro + ref())
- <img src="silver_listings incremental model.png" />
+- Incremental + macro + ref()
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/silver_listings%20incremental%20model.png" />
 ---
 
 ## 6) Gold Layer + Fact (Metadata-Driven OBT)
@@ -91,8 +91,8 @@ This project implements the OBT using a **metadata-driven configuration** so joi
 ### Fact Model
 A fact model is then created on top of the OBT to support downstream reporting and dimensional modeling.
 
-- (metadata-driven join pattern)
- <img src="metadata driven obt model.png" />
+- Metadata-driven join pattern
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/metadata%20driven%20obt%20model.png" />
 
 ---
 
@@ -108,11 +108,11 @@ To support dimensional modeling and historical tracking:
 - `dim_bookings` (SCD2)
 
 
-- (OBT → ephemeral → snapshots dims)  
- <img src="lineage 2.png" />
+- OBT → ephemeral → snapshots dims 
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/lineage%202.png" />
 
--  (snapshot config: unique_key, updated_at, strategy)
- <img src="dim_bookings snapshot.png" />
+- Snapshot config: unique_key, updated_at, strategy
+ <img src="https://github.com/pninad9/Airbnb-project/blob/73c078343aaa5492c6b2cfdb6cb5e4efe01b4afd/screenshot/dim_bookings%20snapshot.png" />
 
 
 
