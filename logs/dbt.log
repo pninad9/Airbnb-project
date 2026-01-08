@@ -1,0 +1,32 @@
+[0m23:31:03.603588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F3A80800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F3A820C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F3A81970>]}
+
+
+============================== 23:31:03.637591 | 4b075d60-977a-41b6-8bf5-0808b37f3e16 ==============================
+[0m23:31:03.637591 [info ] [MainThread]: Running with dbt=1.11.2
+[0m23:31:03.638602 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\User\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt init', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:32:01.871894 [debug] [MainThread]: Starter project path: C:\Study\Project\Airbnb project\.venv\Lib\site-packages\dbt\include\starter_project
+[0m23:32:01.938421 [info ] [MainThread]: 
+Your new dbt project "aws_dbt_snowflake" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:32:01.939422 [info ] [MainThread]: Setting up your profile.
+[0m23:32:06.949753 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m23:32:06.950259 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m23:32:06.950259 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m23:35:53.959919 [info ] [MainThread]: Profile aws_dbt_snowflake written to C:\Users\User\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:35:53.962441 [debug] [MainThread]: Command `dbt init` succeeded at 23:35:53.961429 after 290.63 seconds
+[0m23:35:53.962441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F54902C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F59F7B60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1F73C58E0>]}
+[0m23:35:53.963443 [debug] [MainThread]: Flushing usage events
+[0m23:35:54.803592 [debug] [MainThread]: An error was encountered while trying to flush usage events
